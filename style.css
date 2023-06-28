@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+    background: #FCFEFF;
+}
+
+nav {
+    width: 100%;
+    top: 0;
+    background: url("./img/bg.jpg");
+    background-size: cover;
+    position: fixed;
+    z-index: 2;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 2rem;
+    text-transform: capitalize;
+}
+
+.menu-items ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+
+    color: #200b59;
+}
+
+.menu-items ul li:hover {
+    transition: 0.3s ease-in-out all;
+    color: #6330ee;
+    cursor: pointer;
+    text-shadow: 0px 0px 20px #a37bcc;
+}
+
+.intro {
+    margin-top: 8rem;
+    padding: 2rem 2rem;
+    background: url("./img/industrial.jpeg");
+    background-size: cover;
+    display: flex;
+
+}
+
+.text {
+    color: #200b59;
+    padding: 2rem;
+}
+
+.text h2 {
+    text-transform: capitalize;
+    font-size: 5rem;
+    font-weight: 600;
+    max-width: 37rem;
+    line-height: 6rem;
+    text-shadow: 0px 0px 20px #ccc7d1;
+}
+
+.text p {
+    margin-top: 20px;
+    max-width: 30rem;
+    font-size: 17px;
+    line-height: 2rem;
+}
+
+.meet_your_needs h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 4rem;
+    font-style: italic;
+    margin: 0 0 30px 25px;
+    color: #0F2552;
+    margin: 5rem 0;
+    padding: 0 1rem;
+    max-width: 40rem;
+
+}
+
+
+
+.moving-animation {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+.img:hover{
+    transition: 0.5s ease-in-out all;
+    width: 19rem;
+    height: 17rem;
+}
+.img {
+    display: flex;
+    width: 15rem;
+    height: 13rem;
+    position: relative;
+    gap: 2rem;
+    animation: moving ease-in-out 40s infinite;
+    box-shadow: 0px 0px 15px #a37bcc;
+    border-radius: 2rem;
+    transition: 0.5s ease-in-out all;
+
+}
+
+@keyframes moving {
+    0% {
+        right: 30px;
+    }
+
+    100% {
+        right: 2500px;
+    }
+}
+
+.catergories {
+    margin: 8rem auto;
+    background: #093fb5;
+    width: 90%;
+    border-radius: 12px;
+    color: white;
+    text-transform: capitalize;
+    padding: 2rem 15rem;
+    box-shadow: 0 59px 51px -18px rgba(0, 103, 245, .3);
+}
+
+.catergories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.catergories h3 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-shadow: 0px 0px 20px #ccc7d1;
+    color: white;
+}
+
+.catergories p {
+    text-align: center;
+    font-size: 17px; 
+    max-width: 12rem;
+}
+
+.works{
+    text-align: center;
+}
+.works i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.works:hover{
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+    text-shadow: 0px 0px 20px #000000;
+}
+.footer__menu {
+    margin: 4rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 7rem;
+    justify-content: space-between;
+   
+
+}
+
+
+.icon ul li a svg {
+    color: #ebebeb;
+    margin: 0 9px;
+    width: 17px;
+    opacity: 0.5;
+}
+
+.footer__menu-header {
+    font-size: 20px;
+    margin: 40px 0;
+    color: #082552;
+}
+
+.footer__menu ul li {
+    margin-top: 20px;
+    font-size: 16px;
+    list-style: none;
+    color: #08255299;
+
+}
+
+.footer__menu ul li a {
+    color: #08255299;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 600px){
+    .nav-container {
+        padding: 10px 1rem;
+    }
+    .menu-items ul {
+        gap: 1rem;
+    }
+    .text {
+        padding: 1rem;
+    }
+    .text h2 {
+        font-size: 4rem;
+    }
+    .meet_your_needs h3 {
+        font-size: 2.5rem;
+        margin: 5rem 1rem;
+        max-width: 25rem;
+
+    }
+    .img {
+        animation: moving ease-in-out 45s infinite;
+    }
+    
+    @keyframes moving {
+        0% {
+            right: 30px;
+        }
+    
+        100% {
+            right: 3500px;
+        }
+    }
+    .catergories {
+        padding: 2rem 1rem;
+    }
+    .works i {
+        font-size: 2rem;
+    }
+    .footer__menu {
+        padding: 0 2rem;
+        gap: 1.5rem;
+    
+    }
+
+}
