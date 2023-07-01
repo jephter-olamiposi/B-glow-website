@@ -31,6 +31,7 @@ main {
 }
 footer{
     width:100%;
+
 }
 .nav-container {
     display: flex;
@@ -595,7 +596,7 @@ footer{
     margin: 4rem 0 0 0;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 7rem 3rem;
+    padding: 0 7rem 3rem ;
     justify-content: space-between;
     background-color: #000000;
     align-items: start;
@@ -855,7 +856,7 @@ footer{
 
 
     .footer__menu {
-        padding: 0 2rem;
+        padding: 0 2rem 3rem;
         gap: 1.5rem;
 
     }
