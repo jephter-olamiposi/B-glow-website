@@ -4,22 +4,34 @@
     box-sizing: border-box;
     font-family: sans-serif;
 
-}
 
+}
+a{
+    text-decoration: none;
+}
 body {
     background: #FCFEFF;
 }
-
 nav {
     width: 100%;
     top: 0;
-    background: #FCFEFF;
+    background:#FCFEFF;
     background-size: cover;
     position: fixed;
-    z-index: 2;
+    z-index: 4;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
+nav{
+    width: 100%;
+    
+}
 
+main {
+    width:100% ;
+}
+footer{
+    width:100%;
+}
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -27,6 +39,33 @@ nav {
     padding: 10px 2rem;
 
 }
+.B-glow-logo{
+    max-width: 7rem;
+}
+
+/* menu style */
+.menu-wrap{
+    display: flex;
+    align-items: center;
+}
+.toggler {
+    visibility: hidden;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .signup-btn,
 .Shop,.send {
@@ -66,11 +105,12 @@ nav {
     background: #F4F6F5;
     background-size: cover;
     display: flex;
+    flex-wrap: wrap;
 
 }
 
 .ad-img {
-    width: 35rem;
+    max-width: 35rem;
 }
 
 .white {
@@ -125,6 +165,7 @@ nav {
     position: absolute;
     z-index: -1;
     margin: .3rem 0 0 9rem;
+
 }
 .curve2{
     margin-left: 15rem;
@@ -156,6 +197,10 @@ nav {
     padding: 0 5rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+
 
 }
 
@@ -187,8 +232,6 @@ nav {
 .arrivals-info  {
     margin-top: 2rem;
     text-transform: capitalize;
-
-
 }
 
 .arrivals-info h5 {
@@ -229,6 +272,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 5rem;
 
 }
@@ -408,24 +452,56 @@ nav {
     transition: 0.5s ease-in-out all;
 }
 
-.catergories {
-    margin: 8rem 0;
 
-    border-radius: 12px;
-    text-transform: capitalize;
-    padding: 2rem 0;
-
-}
 .info{
     background: white;
-    padding: 1.5rem .5rem 1rem 1.5rem;
+    padding: 1.5rem .5rem 0rem 1.5rem;
     width: 15rem;
+    height: 6rem;
     text-transform: capitalize;
 }
 .work-img{
     border-radius: 0px;
 }
+.info a {
+    font-size: 17px;
+    font-weight: 600;
+    color: black;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 3.5rem;
 
+}
+
+.info a>div {
+    height: 8px;
+    width: 8px;
+    border-right:  solid 1px;
+    border-top:solid 1px;
+    rotate: 50deg;
+
+    
+}
+
+.info a:hover {
+    animation: go;
+    animation-duration: 1s;
+    transition-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes go {
+    0% {
+        gap: 0px;
+    }
+
+    100% {
+        gap: 10px;
+    }
+
+}
 
 .arrivals-info h5,.info h5 {
     font-size: 19px;
@@ -433,15 +509,27 @@ nav {
     display: flex;
     justify-content: space-between;
 }
-.catergories-container {
-    position: absolute;
+.catergories {
+    margin: 8rem 0;
+    border-radius: 12px;
+    text-transform: capitalize;
+    padding: 2rem 0;
+
+}
+.catergories{
     display: flex;
+}
+.catergories-container {
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 3rem;
     margin: 15rem 0 0 10rem;
 }
 .catergories-text{
+    position: absolute;
     height: 40rem;
     width:40% ;
     padding-top: 7rem;
@@ -466,6 +554,7 @@ nav {
     width: 100%;
     padding: 4rem 0;
     display: flex;
+
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -491,7 +580,7 @@ nav {
 }
 .email{
     background: none;
-    padding: 1rem 8rem  1rem  0;
+    padding: 1rem 8rem  1rem  1rem;
     border: none;
     font-size: 19px;
 }
@@ -563,47 +652,207 @@ nav {
     .nav-container {
         padding: 10px 1rem;
     }
-
-    .menu-items ul {
-        gap: 1rem;
+    .toggler {
+        visibility: visible;
     }
 
-    .text {
-        padding: 1rem;
+    .menu-wrap {
+        z-index: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-wrap .toggler {
+        position: fixed;
+        z-index: 2;
+        cursor: pointer;
+        width: 50px;
+        height: 45px;
+        opacity: 0;
+        
+    }
+
+    .menu-wrap .hamburger {
+        z-index: 1;
+        width: 50px;
+        margin-left: 12px;
+
+    }
+
+    /* Hamburger Line */
+    .menu-wrap .hamburger>div {
+        position: relative;
+        flex: none;
+        width: 26px;
+        height: 2px;
+        background: rgb(0, 0, 0);
+        display: flex;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+
+    /* Hamburger Lines - Top & Bottom */
+    .menu-wrap .hamburger>div::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        border-radius: 12px;
+        height: 2px;
+        background: inherit;
+    }
+
+    /* Moves Line Down */
+    .menu-wrap .hamburger>div::after {
+        top: 8px;
+    }
+
+    /* Toggler Animation */
+    .menu-wrap .toggler:checked+.hamburger>div {
+        transform: rotate(45deg);
+
+    }
+
+    /* Turns Lines Into X */
+    .menu-wrap .toggler:checked+.hamburger>div:before {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    /* Rotate On Hover When Checked */
+    .menu-wrap .toggler:checked:hover+.hamburger>div {
+        transform: rotate(-45deg);
+    }
+
+    /* Show Menu */
+    .menu-wrap .toggler:checked~.menu {
+        visibility: visible;
+        transform:translateY(100%);
+        
+    } 
+    .menu-wrap .toggler:checked~.menu>div {
+        transform: scaleX(1);
+
+    }
+
+    .menu-wrap .menu {
+        position: absolute;
+        top: -100VH;
+        left: 0;
+        visibility: hidden;
+        overflow: hidden;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        width: 100vw;
+        height: 100vh;
+        transition: 1.5s ease-in-out;
+    }
+
+    .menu-items{
+        margin: 9rem 2rem 0;
+        
+    }
+    .menu-items ul{
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .signup-btn{
+
+        width: 100%;
+        padding: 10px 10rem ;
+        font-weight:600 ;
+        margin-top: 5rem;
+    }
+    .menu-items ul li{
+
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+
+
+
+    .intro{
+        flex-direction: column;
+        padding: 2rem .5rem 2rem;
+        gap: 3rem;
+    }
+    .ad-img{
+       width: 100%;
+
+    }
+
+    .white {
+        padding: 0 4rem 0 1.5rem;
+    }
+    
+    .yellow {
+
+        padding: 0 4rem 0 1.5rem;
     }
 
     .text h2 {
-        font-size: 4rem;
+
+        font-size: 2.5rem;
+    }
+    .text p {
+        margin: 2rem 0;
+
+    }
+    
+    .shops {
+        margin-left: 0;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
     }
 
     .meet_your_needs h3 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin: 5rem 1rem;
         max-width: 25rem;
 
     }
-
-    .img {
-        animation: moving ease-in-out 45s infinite;
+    
+    .new-arrival-container{
+        flex-direction: column;
+        align-items: center;
+        padding: 0  1rem;
     }
-
-    @keyframes moving {
-        0% {
-            right: 30px;
-        }
-
-        100% {
-            right: 3500px;
-        }
-    }
-
-    .catergories {
-        padding: 2rem 1rem;
-    }
-
-    .works i {
+    .app-container h5{
         font-size: 2rem;
+        line-height: 2.5rem;
     }
+    .mobile{
+        width: 100%;
+        height: fit-content;
+    }
+    
+    .images{
+        width: 100%;
+        height: fit-content;
+    }
+    .catergories-text{
+        width: 100%;
+        height: 110rem;
+    }
+    .catergories-container{
+        margin: 15rem auto  0 auto;
+
+
+    }
+    .email{
+        padding: 1rem 4rem  1rem  1rem;
+
+    }
+
+
+
 
     .footer__menu {
         padding: 0 2rem;
